@@ -3,13 +3,11 @@ import 'package:reto_28_05_2024/src/features/movies/domain/models/pagination_mov
 import 'package:reto_28_05_2024/src/features/movies/domain/repositories/movie_repository.dart';
 
 class MovieRepositoryImpl implements MovieRepository {
-  final MovieApiClient _movieApiClient;
-
-  MovieRepositoryImpl(this._movieApiClient);
+  final movieApiClient = MovieApiClient();
 
   @override
   Future<PaginationMovies> getMoviesNowPlaying() async {
-    final response = await _movieApiClient.getMoviesNowPlayingApi();
-    return response;
+    final response = await movieApiClient.getMoviesNowPlayingApi();
+    return PaginationMovies.fromJson(response);
   }
 }

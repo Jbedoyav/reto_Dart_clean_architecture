@@ -37,12 +37,12 @@ void main() {
 
     test('should create Pagination Movies model from JSON', () {
       final json = {
-        'page': 1,
         'dates': {
           'maximum': '2022-05-01T00:00:00.000Z',
           'minimum': '2022-05-01T00:00:00.000Z',
         },
-        'movies': [
+        'page': 1,
+        'results': [
           {
             'id': 1,
             'title': 'The Matrix',
@@ -54,9 +54,9 @@ void main() {
       };
 
       final movieFromJson = PaginationMovies.fromJson(json);
-      expect(movieFromJson.page, 1);
       expect(movieFromJson.dates['maximum'], '2022-05-01T00:00:00.000Z');
       expect(movieFromJson.dates['minimum'], '2022-05-01T00:00:00.000Z');
+      expect(movieFromJson.page, 1);
       expect(movieFromJson.movies.length, 1);
       expect(movieFromJson.totalPages, 1);
       expect(movieFromJson.totalResults, 1);

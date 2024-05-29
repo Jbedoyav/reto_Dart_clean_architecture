@@ -2,11 +2,11 @@ import 'package:reto_28_05_2024/src/features/movies/domain/models/pagination_mov
 import 'package:reto_28_05_2024/src/features/movies/domain/repositories/movie_repository.dart';
 
 class GetMoviesNowPlayingUseCase {
-  final MovieRepository _movieRepository;
+  final MovieRepository movieRepository;
 
-  GetMoviesNowPlayingUseCase(this._movieRepository);
+  GetMoviesNowPlayingUseCase(this.movieRepository);
 
   Future<PaginationMovies> call() async {
-    return _movieRepository.getMoviesNowPlaying();
+    return movieRepository.getMoviesNowPlaying();
   }
 }

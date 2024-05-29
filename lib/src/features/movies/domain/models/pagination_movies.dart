@@ -17,9 +17,13 @@ class PaginationMovies {
 
   factory PaginationMovies.fromJson(Map<String, dynamic> json) =>
       PaginationMovies(
-        dates: json['dates'],
+        dates: Map<String, String>.from(json['dates']),
         page: json['page'],
-        movies: List<Movie>.from(json['results'].map((e) => Movie.fromJson(e))),
+        movies: List<Movie>.from(
+          (json['results'] as List<dynamic>).map(
+            (movie) => Movie.fromJson(movie),
+          ),
+        ),
         totalPages: json['total_pages'],
         totalResults: json['total_results'],
       );
