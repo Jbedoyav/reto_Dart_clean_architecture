@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_now_controller.dart';
 import 'package:reto_28_05_2024/core/utils/base_controller.dart';
 import 'package:reto_28_05_2024/core/utils/get_url.dart';
+import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_popular_controller.dart';
 
 class PopularMoviesWidget extends StatelessWidget {
   const PopularMoviesWidget({
@@ -11,7 +11,7 @@ class PopularMoviesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<MoviesNowController>(
+    return Consumer<MoviesPopularController>(
         builder: (context, moviesController, child) {
       if (moviesController.state == BaseControllerStates.initial ||
           moviesController.state == BaseControllerStates.loading) {

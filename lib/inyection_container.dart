@@ -4,6 +4,7 @@ import 'package:reto_28_05_2024/features/movies/data/repositories/movie_reposito
 import 'package:reto_28_05_2024/features/movies/domain/repositories/movie_repository.dart';
 import 'package:reto_28_05_2024/features/movies/domain/usecases/get_movies_now_use_case.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_now_controller.dart';
+import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_popular_controller.dart';
 
 final getIt = GetIt.instance;
 
@@ -18,4 +19,5 @@ void injectionContainer() {
 
   //Presentation layer injection container
   getIt.registerLazySingleton(() => MoviesNowController());
+  getIt.registerLazySingleton(() => MoviesPopularController());
 }
