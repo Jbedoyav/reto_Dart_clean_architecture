@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_now_controller.dart';
+import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_popular_controller.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/widgets/now_playing_widget.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/widgets/popular_movies_widget.dart';
 
@@ -18,6 +19,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<MoviesNowController>().getMoviesNowPlaying();
+      context.read<MoviesPopularController>().getPopularMovies();
     });
     super.initState();
   }
