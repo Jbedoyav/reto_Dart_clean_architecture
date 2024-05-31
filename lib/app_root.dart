@@ -4,8 +4,8 @@ import 'package:reto_28_05_2024/inyection_container.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_controller.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/pages/movies_screen.dart';
 
-class App extends StatelessWidget {
-  const App({super.key});
+class AppRoot extends StatelessWidget {
+  const AppRoot({super.key});
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
