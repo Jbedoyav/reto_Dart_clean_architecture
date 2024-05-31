@@ -7,10 +7,6 @@ void main() {
     test('Two instances with the same properties should be equal', () {
       final PaginationMovie1 = PaginationMovies(
         page: 1,
-        dates: {
-          'maximum': '2022-05-01T00:00:00.000Z',
-          'minimum': '2022-05-01T00:00:00.000Z',
-        },
         movies: [
           Movie(
             id: 1,
@@ -24,10 +20,6 @@ void main() {
 
       final PaginationMovie2 = PaginationMovies(
         page: 1,
-        dates: {
-          'maximum': '2022-05-01T00:00:00.000Z',
-          'minimum': '2022-05-01T00:00:00.000Z',
-        },
         movies: [
           Movie(
             id: 1,
@@ -44,10 +36,6 @@ void main() {
     test('Two instances with different properties should be different', () {
       final PaginationMovie1 = PaginationMovies(
         page: 1,
-        dates: {
-          'maximum': '2022-05-01T00:00:00.000Z',
-          'minimum': '2022-05-01T00:00:00.000Z',
-        },
         movies: [
           Movie(
             id: 1,
@@ -61,10 +49,6 @@ void main() {
 
       final PaginationMovie2 = PaginationMovies(
         page: 2,
-        dates: {
-          'maximum': '2022-05-01T00:00:00.000Z',
-          'minimum': '2022-05-01T00:00:00',
-        },
         movies: [
           Movie(
             id: 1,

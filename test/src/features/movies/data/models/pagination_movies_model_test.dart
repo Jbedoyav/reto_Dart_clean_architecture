@@ -5,10 +5,6 @@ void main() {
   group('Pagination Movies Model', () {
     test('should create Pagination Movies model from JSON', () {
       final json = {
-        'dates': {
-          'maximum': '2022-05-01T00:00:00.000Z',
-          'minimum': '2022-05-01T00:00:00.000Z',
-        },
         'page': 1,
         'results': [
           {
@@ -22,8 +18,7 @@ void main() {
       };
 
       final movieFromJson = PaginationMoviesModel.fromJson(json);
-      expect(movieFromJson.dates?['maximum'], '2022-05-01T00:00:00.000Z');
-      expect(movieFromJson.dates?['minimum'], '2022-05-01T00:00:00.000Z');
+
       expect(movieFromJson.page, 1);
       expect(movieFromJson.movies?.length, 1);
       expect(movieFromJson.totalPages, 1);
