@@ -11,14 +11,14 @@ class MoviesNowController extends ChangeNotifier {
   BaseControllerStates get state => _state;
   PaginationMoviesModel? get paginationMovies => _paginationMovies;
 
-  final GetMoviesNowPlayingUseCase _getMoviesNowPlayingUseCase =
-      GetMoviesNowPlayingUseCase(MovieRepositoryImpl());
+  final GetMoviesNowUseCase _getMoviesNowUseCase =
+      GetMoviesNowUseCase(MovieRepositoryImpl());
 
   Future<void> getMoviesNowPlaying() async {
     _state = BaseControllerStates.loading;
     notifyListeners();
 
-    _paginationMovies = await _getMoviesNowPlayingUseCase.call();
+    _paginationMovies = await _getMoviesNowUseCase.call();
     _state = BaseControllerStates.success;
     notifyListeners();
   }

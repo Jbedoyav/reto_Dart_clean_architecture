@@ -13,8 +13,8 @@ void injectionContainer() {
   getIt.registerFactory<MovieRepository>(() => MovieRepositoryImpl());
 
   //Domain layer injection container
-  getIt.registerFactory<GetMoviesNowPlayingUseCase>(
-      () => GetMoviesNowPlayingUseCase(MovieRepositoryImpl()));
+  getIt.registerFactory<GetMoviesNowUseCase>(
+      () => GetMoviesNowUseCase(MovieRepositoryImpl()));
 
   //Presentation layer injection container
   getIt.registerLazySingleton(() => MoviesNowController());

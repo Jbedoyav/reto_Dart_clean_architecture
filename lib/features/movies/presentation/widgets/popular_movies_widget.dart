@@ -6,8 +6,8 @@ import 'package:reto_28_05_2024/core/utils/get_url.dart';
 
 class PopularMoviesWidget extends StatelessWidget {
   const PopularMoviesWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
