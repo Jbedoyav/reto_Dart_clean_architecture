@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:reto_28_05_2024/features/movies/domain/entity/movie.dart';
 
 void main() {
-  group('Character', () {
+  group('Movies', () {
     test('Two instances with the same properties should be equal', () {
       final movie1 = Movie(
         id: 1,
