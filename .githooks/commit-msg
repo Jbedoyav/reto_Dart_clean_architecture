@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+echo "Running commit-msg hook"
+
+# Ruta al archivo de mensaje de commit
+commit_message_file=".git/COMMIT_EDITMSG"
+
+# Verificar si el archivo de mensaje de commit existe
+if [ ! -f "$commit_message_file" ]; then
+  echo "Commit message file does not exist."
+  exit 1
+fi
+
+# Leer el contenido del archivo de mensaje de commit
+commit_message=$(cat "$commit_message_file")
+echo "Commit message: $commit_message"
+
+# Expresión regular para validar el mensaje de commit
+pattern='^(feat|fix|docs|chore)(\(.+\))?: .+'
+
+# Validar el mensaje de commit
+if [[ ! "$commit_message" =~ $pattern ]]; then
+  echo '👎 Invalid commit message format.'
+  echo 'Commit message should follow the Conventional Commits format.'
+  exit 1
+fi
+
+echo '👍 Valid commit message!'
+exit 0
