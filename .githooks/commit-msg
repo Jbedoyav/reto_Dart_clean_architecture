@@ -20,10 +20,10 @@ pattern='^(feat|fix|docs|chore)(\(.+\))?: .+'
 
 # Validar el mensaje de commit
 if [[ ! "$commit_message" =~ $pattern ]]; then
-  echo '👎 Invalid commit message format.'
-  echo 'Commit message should follow the Conventional Commits format.'
+  echo '❌ Invalid commit message format.'
+  echo "Commit message should follow the Conventional Commits format. ${pattern}"
   exit 1
 fi
 
-echo '👍 Valid commit message!'
+echo '✅ Valid commit message!'
 exit 0
