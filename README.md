@@ -1,3 +1,11 @@
 # reto_28_05_2024
 
-A new Flutter project.
+## Introducción
+
+Para iniciar el proyecto ejecutar el siguiente comando:
+
+```bash
+./start.sh
+```
+
+
