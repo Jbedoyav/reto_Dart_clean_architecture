@@ -7,7 +7,7 @@ void main() {
       final movie1 = Movie(
         id: 1,
         title: 'The Matrix',
-        posterPath: '/matrix.jpg',
+        posterPath: '/matrix.jp',
       );
 
       final movie2 = Movie(
