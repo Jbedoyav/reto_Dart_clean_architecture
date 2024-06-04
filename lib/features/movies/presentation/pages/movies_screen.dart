@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_now_controller.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_popular_controller.dart';
@@ -8,7 +6,7 @@ import 'package:reto_28_05_2024/features/movies/presentation/widgets/now_playing
 import 'package:reto_28_05_2024/features/movies/presentation/widgets/popular_movies_widget.dart';
 
 class MoviesScreen extends StatefulWidget {
-  const MoviesScreen({Key? key}) : super(key: key);
+  const MoviesScreen({super.key});
 
   @override
   State<MoviesScreen> createState() => _MoviesScreenState();
