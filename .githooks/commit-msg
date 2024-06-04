@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Running commit-msg hook"
-
+printf "\e[33;1m%s\e[0m\n" 'Running commit-msg hook'
 # Ruta al archivo de mensaje de commit
 commit_message_file=".git/COMMIT_EDITMSG"
 
