@@ -1,27 +1,19 @@
 #!/usr/bin/env bash
-
-#flutter analyze
-printf "\e[33;1m%s\e[0m\n" 'Running flutter analyze'
-result=$(flutter analyze)
-
-if [ $? -ne 0 ]; then
-  echo -e "$result \n"
-  printf "\e[31;1m%s\e[0m\n" 'Flutter analyze found the above issues, please fix them before pushing'
+if [[ `git status --porcelain` ]]; then
+  printf "\e[31;1m%s\e[0m\n" 'This script needs to run against committed code only. Please commit or stash you changes.'
   exit 1
 fi
-
-echo "$result"
-printf "\e[32;1m%s\e[0m\n" 'Finished running Flutter analyze with 0 issues'
-
-# flutter test
-printf "\e[33;1m%s\e[0m\n" 'Running flutter test'
-result=$(flutter test)
-
+printf "\e[33;1m%s\e[0m\n" 'Running the Flutter analyzer'
+flutter analyze
 if [ $? -ne 0 ]; then
-  echo -e "$result \n"
-  printf "\e[31;1m%s\e[0m\n" '1 or more test(s) failed'
+  printf "\e[31;1m%s\e[0m\n" 'Flutter analyzer error'
   exit 1
 fi
-
-echo "$result"
-printf "\e[32;1m%s\e[0m\n" 'Finished running flutter test'
+printf "\e[33;1m%s\e[0m\n" 'Finished running the Flutter analyzer'
+printf "\e[33;1m%s\e[0m\n" 'Running unit tests'
+flutter test
+if [ $? -ne 0 ]; then
+  printf "\e[31;1m%s\e[0m\n" 'Unit tests error'
+  exit 1
+fi
+printf "\e[33;1m%s\e[0m\n" 'Finished running unit tests'
