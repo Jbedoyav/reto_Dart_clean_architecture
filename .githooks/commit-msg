@@ -14,6 +14,13 @@ fi
 commit_message=$(cat "$commit_message_file")
 echo "Commit message: $commit_message"
 
+# Comprobar si el commit es un merge
+if [[ "$commit_message" =~ ^Merge ]]; then
+  printf "\e[33;1m%s\e[0m\n" '⚠️ Merge commit detected, skipping validation'
+  exit 0
+fi
+
+
 # Expresión regular para validar el mensaje de commit
 pattern='^(feat|fix|docs|chore)(\(.+\))?: .+'
 text='(feat|fix|docs|chore)'
