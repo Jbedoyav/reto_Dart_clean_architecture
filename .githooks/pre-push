@@ -24,5 +24,5 @@
   fi
 
   echo "$result"
-  printf "\e[32;1m%s\e[0m\n" '✅ Finished running flutter test'
+  printf "\e[33;1m%s\e[0m\n" '✅ Finished running flutter test'
   
