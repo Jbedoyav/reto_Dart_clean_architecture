@@ -8,41 +8,41 @@
             "name": "Flutter: Popular Movies Dev",
             "request": "launch",
             "type": "dart",
-            "args": ["--flavor", "brand1Dev", "--target", "lib/config/environments/main_development.dart"]
+            "args": ["--flavor", "populardev", "--target", "lib/config/environments/main_development.dart"]
           },
           {
             "name": "Flutter: Popular Movies Prod",
             "request": "launch",
             "type": "dart",
-            "args": ["--flavor", "brand1Prod", "--target", "lib/config/environments/main_production.dart"]
+            "args": ["--flavor", "popularprod", "--target", "lib/config/environments/main_production.dart"]
 
           },
           {
             "name": "Flutter: Popular Movies Staging",
             "request": "launch",
             "type": "dart",
-            "args": ["--flavor", "brand1Staging", "--target", "lib/config/environments/main_staging.dart"]
+            "args": ["--flavor", "popularstaging", "--target", "lib/config/environments/main_staging.dart"]
 
           },
           {
             "name": "Flutter: Now Playing Movies Dev",
             "request": "launch",
             "type": "dart",
-            "args": ["--flavor", "brand2Dev", "--target", "lib/config/environments/main_development.dart"]
+            "args": ["--flavor", "nowplayingdev", "--target", "lib/config/environments/main_development.dart"]
 
           },
           {
             "name": "Flutter: Now Playing Movies Prod",
             "request": "launch",
             "type": "dart",
-            "args": ["--flavor", "brand2Prod", "--target", "lib/config/environments/main_production.dart"]
+            "args": ["--flavor", "nowplayingprod", "--target", "lib/config/environments/main_production.dart"]
 
           },
           {
             "name": "Flutter: Now Playing Movies Staging",
             "request": "launch",
             "type": "dart",
-            "args": ["--flavor", "brand2Staging", "--target", "lib/config/environments/main_staging.dart"]
+            "args": ["--flavor", "nowplayingstaging", "--target", "lib/config/environments/main_staging.dart"]
 
           }
         ]

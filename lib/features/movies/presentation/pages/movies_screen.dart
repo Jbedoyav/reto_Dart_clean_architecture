@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:reto_28_05_2024/config/environments/config_env.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_now_controller.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_popular_controller.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/widgets/now_playing_widget.dart';
@@ -26,8 +27,8 @@ class _MoviesScreenState extends State<MoviesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Películas en cine'),
-        backgroundColor: Colors.blue,
+        title: Text(EnvInfo.appName),
+        backgroundColor: EnvInfo.brandTheme.primary,
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 15),
@@ -35,17 +36,18 @@ class _MoviesScreenState extends State<MoviesScreen> {
           ),
         ],
       ),
-      body: const SafeArea(
+      body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
+            const Expanded(
               child: NowPlayingWidget(),
             ),
-            Text('Populares',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-            Expanded(
+            Text(EnvInfo.brandService,
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            const Expanded(
                 child: Padding(
               padding: EdgeInsets.all(8.0),
               child: PopularMoviesWidget(),

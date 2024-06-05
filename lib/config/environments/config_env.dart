@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 // ignore: constant_identifier_names
 enum AppEnvironment { DEV, STAGING, PROD } //environments
 
@@ -11,6 +13,7 @@ class EnvInfo {
   // Initialize app according flavor set up
   static void initializeFromFlavor(AppEnvironment environment) {
     Brand brand = _getBrandFromFlavor();
+
     initialize(environment, brand);
   }
 
@@ -25,7 +28,7 @@ class EnvInfo {
     const String flavor = String.fromEnvironment('FLUTTER_APP_FLAVOR');
     if (flavor.startsWith('popular')) {
       return Brand.popular;
-    } else if (flavor.startsWith('nowPlaying')) {
+    } else if (flavor.startsWith('nowplaying')) {
       return Brand.nowPlaying;
     } else {
       return Brand.popular;
@@ -40,6 +43,7 @@ class EnvInfo {
   static Brand get brand => _brand;
   static bool get isProduction => _environment == AppEnvironment.PROD;
   static String get brandService => _brand._brandService;
+  static ColorScheme get brandTheme => _brand._brandTheme;
 }
 
 //extensions
@@ -73,12 +77,22 @@ extension _BrandProperties on Brand {
     Brand.nowPlaying: 'Now Playing Movies',
   };
 
+  static final _brandThemes = {
+    Brand.popular: ColorScheme.fromSwatch(
+      primarySwatch: Colors.red,
+    ),
+    Brand.nowPlaying: ColorScheme.fromSwatch(
+      primarySwatch: Colors.purple,
+    ),
+  };
+
   static const _brandServices = {
     Brand.popular:
-        'https://api.themoviedb.org/3/movie/popular?api_key=870e936f35b26f8eef70dbc59f3d934f',
+        'https://api.themoviedb.org/3/movie/popular?api_key=870e936f35b26f8eef70dbc59f3d934f&page=29',
     Brand.nowPlaying:
-        'https://api.themoviedb.org/3/movie/now_playing?api_key=870e936f35b26f8eef70dbc59f3d934f',
+        'https://api.themoviedb.org/3/movie/now_playing?api_key=870e936f35b26f8eef70dbc59f3d934f&page=3',
   };
   String get _brandService => _brandServices[this]!;
   String get _brandTitle => _brandTitles[this]!;
+  ColorScheme get _brandTheme => _brandThemes[this]!;
 }
