@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
+import 'package:reto_28_05_2024/config/environments/config_env.dart';
 import 'package:reto_28_05_2024/core/exceptions/custom_exception.dart';
 import 'package:reto_28_05_2024/core/utils/base_api.dart';
 
 class MovieApiClient extends BaseApi {
   BaseApi baseApi = BaseApi();
 
-  Future<Map<String, dynamic>> getMoviesApi(String params) async {
+  Future<Map<String, dynamic>> getMoviesApi() async {
     try {
-      final response = await baseApi.get(
-          'https://api.themoviedb.org/3/movie/$params?api_key=870e936f35b26f8eef70dbc59f3d934f');
+      final response = await baseApi.get(EnvInfo.brandService);
       return response.data;
     } on DioException catch (e) {
       throw CustomException(

@@ -7,13 +7,13 @@ class MovieRepositoryImpl implements MovieRepository {
 
   @override
   Future<PaginationMoviesModel> getMoviesNow() async {
-    final response = await movieApiClient.getMoviesApi('now_playing');
+    final response = await movieApiClient.getMoviesApi();
     return PaginationMoviesModel.fromJson(response);
   }
 
   @override
   Future<PaginationMoviesModel> getPopularMovies() async {
-    final response = await movieApiClient.getMoviesApi('popular');
+    final response = await movieApiClient.getMoviesApi();
     return PaginationMoviesModel.fromJson(response);
   }
 }
