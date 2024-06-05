@@ -3,7 +3,8 @@ flutter pub get
 
 # Git hooks
 git config core.hooksPath .githooks
-chmod +x .githooks/pre-commit
-chmod +x .githooks/pre-push
-chmod +x .githooks/commit-msg
+chmod 555 .githooks/pre-commit
+chmod 555 .githooks/pre-push
+chmod 555 .githooks/commit-msg
+
 # Run app
