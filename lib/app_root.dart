@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:reto_28_05_2024/config/flavor_banner.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_now_controller.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/controllers/movies_popular_controller.dart';
-import 'package:reto_28_05_2024/inyection_container.dart';
+import 'package:reto_28_05_2024/injection_container.dart';
 import 'package:reto_28_05_2024/features/movies/presentation/pages/movies_screen.dart';
 
 class AppRoot extends StatelessWidget {
